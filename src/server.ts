@@ -15,9 +15,10 @@ class Server {
     }
 
     public config() {
-        //set up mongoose
-        const MONGO_URI = 'mongodb://localhost/test';
-        mongoose.connect(MONGO_URI || process.env.MONGODB_URI);
+        //DB Config
+        const MONGO_URI = require("./config/keys").mongoURI;
+
+        mongoose.connect(MONGO_URI);
 
         //config
         this.app.use(bodyParser.json());
