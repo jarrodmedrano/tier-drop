@@ -3,11 +3,6 @@ import {model, Schema} from "mongoose";
 let UserSchema: Schema = new Schema({
     createdAt: Date,
     updatedAt: Date,
-    name: {
-        type: String,
-        default: '',
-        required: true
-    },
     username: {
         type: String,
         default: '',

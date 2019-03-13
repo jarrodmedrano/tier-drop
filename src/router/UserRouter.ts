@@ -126,8 +126,8 @@ class UserRouter {
         this.router.put('/', this.UpdateUser);
         this.router.delete('/:username', this.DeleteUser);
     }
-
 }
+
 
 //export
 const userRoutes = new UserRouter();

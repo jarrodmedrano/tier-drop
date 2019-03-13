@@ -1,6 +1,7 @@
 import * as express from 'express';
 import * as mongoose from 'mongoose';
 import * as bodyParser from 'body-parser';
+import UserRouter from "./router/UserRouter";
 
 
 //Server Class
@@ -22,7 +23,7 @@ class Server {
 
         //config
         this.app.use(bodyParser.json());
-        this.app.use(bodyParser.urlencoded({extended: true}))
+        this.app.use(bodyParser.urlencoded({extended: true}));
     }
 
     public routes(): void {
@@ -30,7 +31,7 @@ class Server {
         router = express.Router();
 
         this.app.use('/', router);
-
+        this.app.use('/api/v1/users', UserRouter);
     }
 }
 
